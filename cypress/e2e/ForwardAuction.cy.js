@@ -128,7 +128,6 @@ describe("Edit Profile", () => {
         // cy.get('.bootbox > .modal-dialog > .modal-content > .modal-footer > .btn').click();
 
         cy.get('#btnsubmit').click();
-        
      });
    
     
