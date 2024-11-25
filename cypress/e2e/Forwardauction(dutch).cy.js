@@ -8,7 +8,7 @@ describe("Edit Profile", () => {
       });
     
       cy.get('#username').should("not.be.disabled").type("priya.chauhan@agileapt.com"); 
-      cy.get("#password").should("not.be.disabled").type("1234");
+      cy.get("#password").should("not.be.disabled").type("Vv@1234");
       cy.get('.col-sm-8 > .btn').click();  
 
  
@@ -22,9 +22,10 @@ describe("Edit Profile", () => {
         cy.get('#txtbiddescription').should("be.visible").should("not.be.disabled").type("Fa dutch automation");
         
         cy.get('#btncal > .fa').click();                                  //calender
-        cy.get(':nth-child(4) > .active').click();
-        cy.get('td > :nth-child(19)').click();
-        cy.get('.datetimepicker-minutes > .table-condensed > tbody > tr > td > :nth-child(12)').click();
+        cy.get(':nth-child(6) > :nth-child(7)').click();
+       
+        cy.get('.datetimepicker-hours > .table-condensed > tbody > tr > td > :nth-child(12)').click();
+        cy.get('.datetimepicker-minutes > .table-condensed > tbody > tr > td > :nth-child(3)').click();
         cy.get('#ddlAuctiontype').select("Dutch(RA)");
         cy.get('#file1').click().wait(6000);
 

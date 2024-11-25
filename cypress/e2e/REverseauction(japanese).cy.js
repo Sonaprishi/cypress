@@ -23,8 +23,9 @@ describe("Edit Profile", () => {
         cy.get('#txtBidSubject').type("testing japanese");
         cy.get('#txtbiddescription').type("abcds");
         cy.get('#btncal').click();   // calender
-        cy.get(':nth-child(5) > .active').click();
-        cy.get('.datetimepicker-hours > .table-condensed > tbody > tr > td > :nth-child(12)').click();
+        cy.get('.col-md-4 > .input-group > .input-group-btn > #btncal > .fa').click();
+        cy.get(':nth-child(6) > :nth-child(7)').click();
+        cy.get('.datetimepicker-hours > .table-condensed > tbody > tr > td > .active').click();
         cy.get('.datetimepicker-minutes > .table-condensed > tbody > tr > td > :nth-child(7)').click();
 
         cy.get('#ddlAuctiontype').select("Japanese");
@@ -38,7 +39,35 @@ describe("Edit Profile", () => {
         //Step2
 
 
-        cy.get('#txtshortname').type("abcdf")
+        cy.get('#txtshortname').type("Demo A");
+        cy.get('#txtquantitiy').type("20");
+        cy.get('#txtUOM').type("package{Enter}");
+        cy.get('#txtCeilingPrice').type("30000");
+        cy.get('#txtminimumdecreament').type("1000");
+        cy.get('#add_or').click();
+       
+        cy.get('#txtVendorGroup').type("demo{Enter}");
+
+        // Prod vedor
+
+        // cy.get('#chkvender460').click();
+        // cy.get('#chkvender289').click();
+        // cy.get('#chkvender462').click();
+
+        //QA vendor 
+
+        cy.get('#chkvender1481').click();
+        cy.get('#chkvender141').click();
+        cy.get('#chkvender707').click();
+
+
+
+        cy.get('.row > .col-md-offset-5 > .green').click();
+
+        cy.get('#btnsubmit').click();
+
+        //cy.get('#btnbidapproversamesubmit').click();
+        cy.get('.bootbox > .modal-dialog > .modal-content > .modal-footer > .btn').click();
 
 
 

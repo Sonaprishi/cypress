@@ -7,7 +7,7 @@ describe("Edit Profile", () => {
       });
     
       cy.get('#username').should("not.be.disabled").type("priya.chauhan@agileapt.com"); 
-      cy.get("#password").should("not.be.disabled").type("1234");
+      cy.get("#password").should("not.be.disabled").type("Vv@1234");
       cy.get('.col-sm-8 > .btn').click();  
 
  
