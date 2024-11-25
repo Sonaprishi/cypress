@@ -23,7 +23,7 @@ describe("Edit Profile", () => {
         cy.get('#litab6 > a').click();
         cy.get('#litab7 > a').click();
         cy.get('#litab8 > a').click();
-        cy.get('#txtpreprice0').type("200000000");
+        cy.get('#txtpreprice0').type("20000");
         cy.get('#btnprebid').click();
     });
     

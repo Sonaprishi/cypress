@@ -25,11 +25,8 @@ describe("Edit Profile", () => {
     cy.get('#dropCurrency').select("INR"); // Select Currency
 
     // Purchase Organization Dropdown
-    cy.get(':nth-child(12) > :nth-child(1) > div.col-md-3').wait(8000);
-
-    //Purchase Group
-
-    cy.get('.col-md-3 > .col-md-10').click()
+    cy.get('#ddlPurchaseOrg').click();
+    cy.get('#ddlPurchaseOrg option').contains('Option Name').click(); // Update as per actual option name
 
     // Remarks (Rich Text Editor)
     cy.get('.cke_wysiwyg_frame').then($iframe => {
@@ -40,13 +37,15 @@ describe("Edit Profile", () => {
     cy.get('.col-md-offset-5 > .btn-success').click(); // Submit Form
 
     // NFA Details
-    cy.get('#paramremark17').type("Detail 1");
+    cy.get('#paramremark5').type("Detail 1");
+    cy.get('#paramremark6').type("Detail 2");
+    cy.get('#ddlNFAParam').select("Question 3");
+    cy.get('#addques').click();
+    cy.get('#paramremark32').type("Additional remarks");
 
     cy.get('.col-md-offset-5 > .btn-success').click(); // Final Submission
 
     // Assertions
-    cy.get('.col-md-offset-5 > .green').click() 
-
-    cy.get('.bootbox > .modal-dialog > .modal-content > .modal-footer > .btn').click();
+    cy.get('.notification-success').should('be.visible'); // Verify success message
   });
 });
